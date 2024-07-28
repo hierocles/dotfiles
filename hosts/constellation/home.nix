@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 {
   imports = [
     ../common.nix
@@ -6,7 +6,7 @@
     ../../programs/hyprland
   ];
   home.username = "dylan";
-  home.homeDirectory = "/home/dylan";
+  home.homeDirectory = lib.mkDefault "/home/dylan";
 
   home.packages = with pkgs; [
     zlib
