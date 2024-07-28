@@ -30,6 +30,7 @@
       nixosConfigurations.constellation = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
+          ./hosts/constellation/configuration.nix
           home-manager.nixosModules.home-manager
           {
             home-manager.useUserPackages = true;
