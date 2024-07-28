@@ -9,11 +9,12 @@
       grub = {
         enable = true;
         efiSupport = true;
-        device = "/dev/disk/by-uuid/5208eb5b-5f33-412b-a4d7-f79a09b43004";
+        device = "nodev";
         zfsSupport = true;
       };
       efi = {
         canTouchEfiVariables = true;
+        efiSysMountPoint = "/boot/efi";
       };
     };
     initrd.kernelModules = [

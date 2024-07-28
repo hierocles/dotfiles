@@ -18,7 +18,7 @@
       fsType = "ext4";
     };
 
-  fileSystems."/boot" =
+  fileSystems."/boot/efi" =
     { device = "/dev/disk/by-uuid/D2B7-9F5F";
       fsType = "vfat";
       options = [ "fmask=0022" "dmask=0022" ];
