@@ -39,7 +39,6 @@
         prefixLength = 24;
       }];
     };
-    firewall.enable = true;
     useDHCP = false;
     hostName = "constellation";
     networkmanager.enable = true;
