@@ -78,9 +78,9 @@
   users.users.dylan = {
     isNormalUser = true;
     createHome = true;
-    group = "dylan";
+    group = "users";
     extraGroups =
-      [ "wheel" "users" "networkmanager" ];
+      [ "wheel" "networkmanager" ];
     home = "/home/dylan";
     uid = 1000;
     shell = pkgs.zsh;
