@@ -9,7 +9,6 @@
       grub = {
         enable = true;
         efiSupport = true;
-        efiInstallAsRemovable = true;
         device = "nodev";
         zfsSupport = true;
       };
@@ -41,7 +40,14 @@
     };
     useDHCP = false;
     hostName = "constellation";
+    hostId = "e1a8512a";
     networkmanager.enable = true;
+    firewall = {
+      enable = true;
+      trustedInterfaces = [ "docker0" ];
+      allowedTCPPorts = [ 17500 ];
+      allowedUDPPorts = [ 17500 ];
+    };
   };
   programs.gnupg.agent = {
     enable = true;
@@ -142,13 +148,6 @@
   virtualisation.docker = {
     enable = true;
     rootless.enable = true;
-  };
-
-  networking.firewall = {
-    enable = true;
-    trustedInterfaces = [ "docker0" ];
-    allowedTCPPorts = [ 17500 ];
-    allowedUDPPorts = [ 17500 ];
   };
 
   xdg.portal = {
