@@ -21,7 +21,7 @@
     initrd.kernelModules = [
       "zfs"
       "i915"
-    ]
+    ];
     kernelPackages = config.boot.zfs.package.latestCompatibleLinuxPackages;
     supportedFilesystems = [ "zfs" ];
     zfs.extraPools = [ "datapool" ];
