@@ -23,10 +23,11 @@
     ];
     kernelPackages = config.boot.zfs.package.latestCompatibleLinuxPackages;
     supportedFilesystems = [ "zfs" ];
-    zfs.extraPools = [ "datapool" ];
+    #zfs.extraPools = [ "datapool" ];
   };
 
-  services.zfs.autoScrub.enable = true;
+
+  #services.zfs.autoScrub.enable = true;
 
 
   time.timeZone = "America/New_York";

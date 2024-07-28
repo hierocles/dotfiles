@@ -25,6 +25,7 @@
     hyprcursor
     hyfetch
   ];
+  programs.firefox.enable = true;
   programs.firefox.package = pkgs.wrapFirefox pkgs.firefox-unwrapped {
       extraPolicies = {
       ExtensionSettings = {};
