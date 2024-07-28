@@ -55,16 +55,31 @@
   };
 
   i18n.defaultLocale = "en_US.UTF-8";
+  programs.hyprland.enable = true;
   programs.waybar.enable = true;
   programs.zsh.enable = true;
   services.xserver = {
     enable = true;
-    layout = "us";
+    xkb.layout = "us";
   };
 
-  hardware.opengl = {
+  hardware.graphics = {
     enable = true;
     extraPackages = with pkgs; [ intel-media-driver vaapiVdpau libvdpau-va-gl ];
+  };
+
+  hardware.pulseaudio = {
+    package = pkgs.pulseaudioFull;
+    extraConfig = ''
+    load-module module-udev-detect ignore_dB=1
+    load-module module-detect
+    load-module module-alsa-card device_id="sofhdadsp" tsched=0
+    load-module module-alsa-source device_id="sofhdadsp"
+    load-module module-alsa-sink device_id="sofhdadsp"
+    set-card-profile alsa_card.sofhdadsp output:analog-stereo+input:analog-stereo
+    set-default-sink alsa_output.sofhdadsp.analog-stereo
+    options snd_hda_intel power_save=0
+  '';
   };
 
   environment.variables = {
@@ -153,6 +168,10 @@
   xdg.portal = {
     enable = true;
     wlr.enable = true;
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-gtk
+      xdg-desktop-portal-wlr
+    ];
   };
 
   system.stateVersion = "24.05";
