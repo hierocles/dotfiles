@@ -1,4 +1,4 @@
-{ config, lib, nixpkgs, pkgs, ... }: {
+{ config, lib, nixpkgs, pkgs, services, ... }: {
   imports = [ 
     ./hardware-configuration.nix
     ../../programs/non-free.nix
@@ -52,7 +52,7 @@
   programs.waybar.enable = true;
   programs.zsh.enable = true;
   services.xserver = {
-    enabled = true;
+    enable = true;
     layout = "us";
   };
 
