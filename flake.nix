@@ -15,16 +15,17 @@
       url = "github:hyprwm/hyprpaper";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nur.url = "github:nix-community/nur";
   };
 
-  outputs = { home-manager, nixpkgs, hyprland ... }:
-      overlays = [ ];
+  outputs = { home-manager, nixpkgs, hyprland, nur, ... }:
+  let
+      overlays = [ nur.overlay ];
       homeManagerConfFor = config:
         { ... }: {
           nixpkgs.overlays = overlays;
           imports = [ config ];
         };
-      };
     in {
       nixosConfigurations.constellation = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
