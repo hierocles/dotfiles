@@ -53,7 +53,7 @@
   programs.waybar.enable = true;
   programs.zsh.enable = true;
   services.xserver = {
-    enabled = truel
+    enabled = true;
     layout = "us";
   };
 
