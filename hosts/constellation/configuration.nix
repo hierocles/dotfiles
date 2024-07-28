@@ -6,7 +6,7 @@
       grub = {
         enable = true;
         efiSupport = true;
-        device = "nodev";
+        device = "/dev/disk/by-uuid/5208eb5b-5f33-412b-a4d7-f79a09b43004";
         zfsSupport = true;
       };
       efi = {
@@ -69,6 +69,7 @@
   users.users.dylan = {
     isNormalUser = true;
     createHome = true;
+    group = "users";
     extraGroups =
       [ "wheel" "docker" "video" "audio" "disk" "networkmanager" ];
     home = "/home/dylan";
