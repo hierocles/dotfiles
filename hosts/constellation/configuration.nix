@@ -143,5 +143,5 @@
     wlr.enable = true;
   };
 
-  system.stateVersion = "2.05";
+  system.stateVersion = "24.05";
 }

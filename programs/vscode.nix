@@ -6,7 +6,7 @@
       ms-python.python
     ];
     userSettings = {
-      "editor.fontFamily" = "Iosevka";
+      "editor.fontFamily" = "Cascadia Code";
       "editor.fontLigatures" = true;
       "editor.fontSize" = 13;
       "workbench.colorTheme" = "Solarized Dark";
