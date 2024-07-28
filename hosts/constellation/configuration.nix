@@ -71,13 +71,14 @@
   users.users.dylan = {
     isNormalUser = true;
     createHome = true;
-    group = "users";
+    group = "dylan";
     extraGroups =
-      [ "wheel" "docker" "video" "audio" "disk" "networkmanager" ];
+      [ "wheel" "users" "docker" "video" "audio" "disk" "networkmanager" ];
     home = "/home/dylan";
     uid = 1000;
     shell = pkgs.zsh;
   };
+
   nix = {
     extraOptions = ''
       experimental-features = nix-command flakes
