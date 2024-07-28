@@ -1,5 +1,8 @@
 { config, lib, nixpkgs, pkgs, ... }: {
-  imports = [ ./hardware-configuration.nix ../../programs/non-free.nix ];
+  imports = [ 
+    ./hardware-configuration.nix
+    ../../programs/non-free.nix
+    ];
 
   boot = {
     loader = {
@@ -11,7 +14,6 @@
       };
       efi = {
         canTouchEfiVariables = true;
-        efiSysMountPoint = "/boot";
       };
     };
     initrd.kernelModules = [
