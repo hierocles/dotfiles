@@ -86,7 +86,7 @@
     '';
     nixPath = [ "nixpkgs=${nixpkgs}" ];
     registry.nixpkgs.flake = nixpkgs;
-    package = pkgs.nixUnstable;
+    package = pkgs.nixVersions.latest;
     settings = {
       substituters = [
         "https://nix-community.cachix.org/"
