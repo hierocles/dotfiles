@@ -9,6 +9,7 @@
       grub = {
         enable = true;
         efiSupport = true;
+        efiInstallAsRemovable = true;
         device = "nodev";
         zfsSupport = true;
       };
@@ -74,7 +75,7 @@
     createHome = true;
     group = "dylan";
     extraGroups =
-      [ "wheel" "users" "docker" "video" "audio" "disk" "networkmanager" ];
+      [ "wheel" "users" "networkmanager" ];
     home = "/home/dylan";
     uid = 1000;
     shell = pkgs.zsh;
