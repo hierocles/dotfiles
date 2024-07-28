@@ -138,7 +138,7 @@
       feh
     ] ++ [
       glib
-      grimb
+      grim
       slurp
       wayland
       wl-clipboard
