@@ -14,7 +14,6 @@
       };
       efi = {
         canTouchEfiVariables = true;
-        efiSysMountPoint = "/boot/efi";
       };
     };
     initrd.kernelModules = [
@@ -35,7 +34,7 @@
   networking = {
     interfaces = {
       enp3s0.ipv4.addresses = [{
-        address = "10.0.0.1";
+        address = "192.168.0.71";
         prefixLength = 24;
       }];
     };
