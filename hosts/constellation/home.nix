@@ -24,6 +24,7 @@
     libsForQt5.kpat
     hyprcursor
     hyfetch
+    vscode
   ];
   programs.firefox.enable = true;
   programs.firefox.package = pkgs.wrapFirefox pkgs.firefox-unwrapped {
@@ -31,6 +32,7 @@
       ExtensionSettings = {};
     };
   };
+  programs.vscode.enable = true;
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
