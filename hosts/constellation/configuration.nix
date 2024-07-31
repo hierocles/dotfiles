@@ -32,13 +32,13 @@
   time.timeZone = "America/New_York";
 
   networking = {
-    interfaces = {
-      enp3s0.ipv4.addresses = [{
-        address = "192.168.0.71";
-        prefixLength = 24;
-      }];
-    };
-    useDHCP = false;
+   # interfaces = {
+   #   enp3s0.ipv4.addresses = [{
+   #     address = "192.168.0.71";
+   #     prefixLength = 24;
+   #   }];
+   # };
+   # useDHCP = true;
     hostName = "constellation";
     hostId = "e1a8512a";
     networkmanager.enable = true;
