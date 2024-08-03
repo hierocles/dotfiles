@@ -90,6 +90,7 @@
       [ "wheel" "networkmanager" "docker" ];
     home = "/home/dylan";
     uid = 1000;
+    shell = pkgs.fish;
   };
 
   nix = {
