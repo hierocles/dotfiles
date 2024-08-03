@@ -7,5 +7,6 @@
     "1password-gui"
     "onepassword-password-manager"
     "vscode"
+    "plexmediaserver"
   ];
 }

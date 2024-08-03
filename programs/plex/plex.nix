@@ -4,6 +4,6 @@
         enable = true;
         openFirewall = true;
         group = "media";
-        accelerationDevices = "/dev/dri/renderD128";
+        accelerationDevices = [ "/dev/dri/renderD128" ];
     };
 }
