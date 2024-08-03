@@ -22,23 +22,16 @@
     ];
     kernelPackages = config.boot.zfs.package.latestCompatibleLinuxPackages;
     supportedFilesystems = [ "zfs" ];
-    #zfs.extraPools = [ "datapool" ];
+    zfs.extraPools = [ "datapool" ];
   };
 
 
-  #services.zfs.autoScrub.enable = true;
+  services.zfs.autoScrub.enable = true;
 
 
   time.timeZone = "America/New_York";
 
   networking = {
-   # interfaces = {
-   #   enp3s0.ipv4.addresses = [{
-   #     address = "192.168.0.71";
-   #     prefixLength = 24;
-   #   }];
-   # };
-   # useDHCP = true;
     hostName = "constellation";
     hostId = "e1a8512a";
     networkmanager.enable = true;
@@ -55,12 +48,12 @@
   };
 
   i18n.defaultLocale = "en_US.UTF-8";
-  programs.hyprland.enable = true;
-  programs.waybar.enable = true;
   programs.zsh.enable = true;
   services.xserver = {
     enable = true;
     xkb.layout = "us";
+    displayManager.gdm.enable = true;
+    desktopManager.gnome.enable = true;
   };
 
   hardware.graphics = {
@@ -86,7 +79,6 @@
     VDPAU_DRIVER = "va_gl";
     LIBVA_DRIVER_NAME = "iHD";
     MOZ_DISABLE_RDD_SANDBOX = "1";
-    NIXOS_OZONE_WL = "1";
     NIXPKGS_ALLOW_UNFREE = "1";
   };
 
@@ -95,7 +87,7 @@
     createHome = true;
     group = "users";
     extraGroups =
-      [ "wheel" "networkmanager" ];
+      [ "wheel" "networkmanager" "docker" ];
     home = "/home/dylan";
     uid = 1000;
     shell = pkgs.zsh;
@@ -113,12 +105,10 @@
         "https://nix-community.cachix.org/"
         "https://cache.nixos.org/"
         "https://cache.iog.io"
-        "https://hyprland.cachix.org"
       ];
       trusted-public-keys = [
         "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
         "hydra.iohk.io:f/Ea+s+dFdN+3Y/G+FDgSq+a5NEWhJGzdjvKNGv0/EQ="
-        "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
       ];
       allow-import-from-derivation = "true";
     };
@@ -129,49 +119,30 @@
     };
 
   };
+  
+  environment.gnome.excludePackages = (with pkgs; [
+    gnome-photos
+    gnome-tour
+  ]) ++ (with pkgs.gnome; [
+    cheese
+    gnome-music
+    epiphany
+    geary
+    evince
+    totem
+    tali
+    iagno
+    hitori
+    atomix
+  ]);
 
-  fonts.packages = with pkgs; [
-    (nerdfonts.override { fonts = [ "CascadiaCode" "FiraCode" ]; })
+  services.udev.packages = with pkgs; [
+    gnome.gnome-settings-daemon
   ];
-
-  environment.systemPackages = with pkgs;
-    [
-      alacritty
-      binutils
-      wget
-      intel-gpu-tools
-      killall
-      libva-utils
-      docker-compose
-      cmake
-      gcc
-      gnumake
-      libtool
-      vdpauinfo
-      dunst
-      direnv
-      feh
-    ] ++ [
-      glib
-      grim
-      slurp
-      wayland
-      wl-clipboard
-      wdisplays
-    ];
 
   virtualisation.docker = {
     enable = true;
     rootless.enable = true;
-  };
-
-  xdg.portal = {
-    enable = true;
-    wlr.enable = true;
-    extraPortals = with pkgs; [
-      xdg-desktop-portal-gtk
-      xdg-desktop-portal-wlr
-    ];
   };
 
   system.stateVersion = "24.05";

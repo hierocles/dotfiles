@@ -24,13 +24,23 @@
       unzip
       neovim
       fzf
+      alacritty
+      binutils
+      wget
+      intel-gpu-tools
+      killall
+      libva-utils
+      docker-compose
+      cmake
+      gcc
+      gnumake
+      libtool
+      vdpauinfo
+      direnv
+      feh
+      gtk-engine-murrine
+      gtk3
     ];
   };
   programs.fzf.enable = true;
-  xdg.configFile."oh-my-zsh/plugins/nix-shell".source = pkgs.fetchFromGitHub {
-    owner = "chisui";
-    repo = "zsh-nix-shell";
-    rev = "v0.8.0";
-    sha256 = "1lzrn0n4fxfcgg65v0qhnj7wnybybqzs4adz7xsrkgmcsr0ii8b7";
-  };
 }
