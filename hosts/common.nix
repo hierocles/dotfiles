@@ -39,8 +39,11 @@
       direnv
       feh
       gtk-engine-murrine
-      gtk3
+      sassc
+      gnome-themes-extra
+      (pkgs.nerdfonts.override { fonts = [ "CascadiaCode" ]; })
     ];
   };
   programs.fzf.enable = true;
+  fonts.fontconfig.enable = true;
 }

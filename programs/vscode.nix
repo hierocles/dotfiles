@@ -3,13 +3,14 @@
   programs.vscode = {
     enable = true;
     extensions = with pkgs.vscode-extensions; [
-      ms-python.python
+      bbenoist.nix
+      jdinhlife.gruvbox
     ];
     userSettings = {
-      "editor.fontFamily" = "Cascadia Code";
+      "editor.fontFamily" = "CaskaydiaCove NF";
       "editor.fontLigatures" = true;
       "editor.fontSize" = 13;
-      "workbench.colorTheme" = "Solarized Dark";
+      "workbench.colorTheme" = "Gruvbox Dark Hard";
     };
   };
  }

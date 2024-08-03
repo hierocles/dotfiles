@@ -4,17 +4,23 @@
     ../common.nix
     ../../programs/non-free.nix
   ];
-  home.username = "dylan";
-  home.homeDirectory = lib.mkDefault "/home/dylan";
-  home.packages = with pkgs; [
-    gnomeExtensions.dash-to-panel
-    gnomeExtensions.simple-workspaces-bar
-    gnomeExtensions.workspace-indicator
-    gnomeExtensions.blur-my-shell
-    gnomeExtensions.pop-shell
-    gnomeExtensions.appindicator
-  ];
-
+  home = {
+    username = "dylan";
+    homeDirectory = lib.mkDefault "/home/dylan";
+    packages = with pkgs; [
+      gnomeExtensions.dash-to-panel
+      gnomeExtensions.simple-workspaces-bar
+      gnomeExtensions.workspace-indicator
+      gnomeExtensions.blur-my-shell
+      gnomeExtensions.pop-shell
+      gnomeExtensions.appindicator
+      gnomeExtensions.user-themes
+      gruvbox-gtk-theme
+      gruvbox-plus-icons
+      capitaine-cursors-themed
+    ];
+  };
+  xdg.configFile."alacritty/alacritty.toml".source = ../../programs/alacritty/alacritty.toml;
 
   dconf = {
     enable = true;
@@ -26,17 +32,22 @@
         workspace-indicator.extensionUuid
         blur-my-shell.extensionUuid
         pop-shell.extensionUuid
-        appindicator.extensionUuid
+        appindicator.extensionUuid        user-themes.extensionUuid
       ];
       favorite-apps = [
         "firefox.desktop"
         "code.desktop"
-        "org.gnome.Terminal.desktop"
+        "Alacritty.desktop"
       ];
     };
-    settings."org/gnome/desktop/interface".color-scheme = "prefer-dark";
-    settings."org/gnome/desktop/wm/preferences" = {
-      workspace-names = [ "Main" ];
+    settings = {
+      "org/gnome/desktop/interface".color-scheme = "prefer-dark";
+      "org/gnome/desktop/wm/preferences" = {
+        workspace-names = [ "Main" ];
+      };
+      "org/gnome/desktop/background" = {
+        picture-uri-dark = "file:///home/dylan/dotfiles/assets/gruvbox-dark-rainbow.png";
+      };
     };
   };
 
@@ -45,7 +56,8 @@
       enable = true;
       package = pkgs.wrapFirefox pkgs.firefox-unwrapped {
         extraPolicies = {
-        ExtensionSettings = {};
+          ExtensionSettings = {};
+        };
       };
     };
   };
@@ -53,17 +65,28 @@
  gtk = {
   enable = true;
   theme = {
-    name = "gruvbox-gtk-theme";
+    name = "Gruxbox-Dark";
     package = pkgs.gruvbox-gtk-theme;
   };
   iconTheme = {
-    name = "gruxbox-plus-icons";
+    name = "Gruvbox-Plus-Dark";
     package = pkgs.gruvbox-plus-icons;
   };
   cursorTheme = {
-    name = "capitaine-cursors-themed";
+    name = "Capitaine Cursors (Gruvbox)";
     package = pkgs.capitaine-cursors-themed;
-  }
+  };
+
+  gtk3.extraConfig = {
+    Settings = ''
+      gtk-application-prefer-dark-theme=1
+      '';
+  };
+  gtk4.extraConfig = {
+    Settings = ''
+      gtk-application-prefer-dark-theme=1
+      '';
+  };
  };
 
 }

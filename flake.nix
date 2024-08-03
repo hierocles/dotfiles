@@ -6,12 +6,11 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nur.url = "github:nix-community/nur";
   };
 
-  outputs = { home-manager, nixpkgs, nur, ... }:
+  outputs = { self, home-manager, nixpkgs, ... }:
   let
-      overlays = [ nur.overlay ];
+      overlays = [ ];
       homeManagerConfFor = config:
         { ... }: {
           nixpkgs.overlays = overlays;

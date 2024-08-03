@@ -123,17 +123,24 @@
   environment.gnome.excludePackages = (with pkgs; [
     gnome-photos
     gnome-tour
-  ]) ++ (with pkgs.gnome; [
-    cheese
-    gnome-music
     epiphany
     geary
     evince
     totem
+    cheese
+    yelp
+    gnome-calendar
+    simple-scan
+  ]) ++ (with pkgs.gnome; [
+    gnome-music
     tali
     iagno
     hitori
     atomix
+    gnome-weather
+    gnome-contacts
+    gnome-initial-setup
+    gnome-maps
   ]);
 
   services.udev.packages = with pkgs; [
