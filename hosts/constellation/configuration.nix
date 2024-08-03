@@ -2,6 +2,7 @@
   imports = [ 
     ./hardware-configuration.nix
     ../../programs/non-free.nix
+    ../../programs/nginx/nginx.nix
     ../../programs/plex/plex.nix
     ];
 
