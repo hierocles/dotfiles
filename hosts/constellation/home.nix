@@ -7,14 +7,12 @@
   home.username = "dylan";
   home.homeDirectory = lib.mkDefault "/home/dylan";
   home.packages = with pkgs; [
-    with gnomeExtensions; [
-      dash-to-panel
-      simple-workspaces-bar
-      workspace-indicator
-      blur-my-shell
-      pop-shell
-      appindicator
-    ];
+    gnomeExtensions.dash-to-panel
+    gnomeExtensions.simple-workspaces-bar
+    gnomeExtensions.workspace-indicator
+    gnomeExtensions.blur-my-shell
+    gnomeExtensions.pop-shell
+    gnomeExtensions.appindicator
   ];
 
 
