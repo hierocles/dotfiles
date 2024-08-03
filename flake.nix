@@ -9,7 +9,7 @@
     nur.url = "github:nix-community/nur";
   };
 
-  outputs = { home-manager, nixpkgs, hyprland, nur, ... }:
+  outputs = { home-manager, nixpkgs, nur, ... }:
   let
       overlays = [ nur.overlay ];
       homeManagerConfFor = config:
