@@ -3,7 +3,6 @@
   imports = [
     ../common.nix
     ../../programs/non-free.nix
-    ../../programs/plex/plex.nix
   ];
   home = {
     username = "dylan";
