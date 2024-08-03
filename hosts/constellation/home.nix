@@ -3,6 +3,7 @@
   imports = [
     ../common.nix
     ../../programs/non-free.nix
+    ../../programs/plex/plex.nix
   ];
   home = {
     username = "dylan";
@@ -32,7 +33,8 @@
         workspace-indicator.extensionUuid
         blur-my-shell.extensionUuid
         pop-shell.extensionUuid
-        appindicator.extensionUuid        user-themes.extensionUuid
+        appindicator.extensionUuid
+        user-themes.extensionUuid
       ];
       favorite-apps = [
         "firefox.desktop"

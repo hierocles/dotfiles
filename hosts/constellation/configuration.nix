@@ -82,12 +82,15 @@
     NIXPKGS_ALLOW_UNFREE = "1";
   };
 
+  users.groups = {
+    media = { };
+  };
   users.users.dylan = {
     isNormalUser = true;
     createHome = true;
     group = "users";
     extraGroups =
-      [ "wheel" "networkmanager" "docker" ];
+      [ "wheel" "networkmanager" "docker" "media" ];
     home = "/home/dylan";
     uid = 1000;
     shell = pkgs.fish;
