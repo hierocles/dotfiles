@@ -1,6 +1,6 @@
 { pkgs, ... }: {
   imports = [
-    ../programs/zsh/zsh.nix
+    ../programs/fish/fish.nix
     ../programs/git.nix
     ../programs/vscode.nix
   ];
