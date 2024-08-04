@@ -4,4 +4,5 @@ in {
 	"user.age".publicKeys = [ key ];
 	"njalla.age".publicKeys = [ key ];
 	"wg.age".publicKeys = [ key ];
+	"transmission.age".publicKeys = [ key ];
 }
