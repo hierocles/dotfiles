@@ -11,6 +11,9 @@
       "editor.fontLigatures" = true;
       "editor.fontSize" = 13;
       "workbench.colorTheme" = "Gruvbox Dark Hard";
+      "editor.insertSpaces" = true;
+      "editor.tabSize" = 2;
     };
   };
  }
+
