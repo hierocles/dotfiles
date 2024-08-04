@@ -36,10 +36,10 @@
     };
 
     transmission = {
-      enable = true; #9901
+      enable = true; #9091
       vpn.enable = true;
       peerPort = 10396;
-      
+      credentialsFile = config.age.secrets.transmission.path;
     };
 
     bazarr.enable = true; #6767
