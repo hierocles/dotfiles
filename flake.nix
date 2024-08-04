@@ -14,7 +14,7 @@
     };
   };
 
-  outputs = { self, home-manager, nixpkgs, nixarr, agenix, ... }:
+  outputs = { self, home-manager, nixpkgs, agenix, nixarr, ... }:
   let
       overlays = [ ];
       homeManagerConfFor = config:
@@ -34,6 +34,9 @@
             home-manager.useUserPackages = true;
             home-manager.users.dylan =
               homeManagerConfFor ./hosts/constellation/home.nix;
+          }
+          {
+            environment.systemPackages = [ agenix.packages.x86_64-linux.default ];
           }
         ];
         specialArgs = { inherit nixpkgs; };
