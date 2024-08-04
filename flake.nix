@@ -27,6 +27,7 @@
         system = "x86_64-linux";
         modules = [
           ./hosts/constellation/configuration.nix
+          ./secrets/files.nix
           nixarr.nixosModules.default
           agenix.nixosModules.default
           home-manager.nixosModules.home-manager

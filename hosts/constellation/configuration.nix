@@ -2,7 +2,7 @@
   imports = [ 
     ./hardware-configuration.nix
     ../../programs/non-free.nix
-    ../../programs/plex/plex.nix
+    ../../programs/nixarr/nixarr.nix
     ];
 
   boot = {
@@ -35,12 +35,13 @@
   networking = {
     hostName = "constellation";
     hostId = "e1a8512a";
+    enableIPv6 = false;
     networkmanager.enable = true;
     firewall = {
       enable = true;
       trustedInterfaces = [ "docker0" ];
-      allowedTCPPorts = [ 17500 ];
-      allowedUDPPorts = [ 17500 ];
+      allowedTCPPorts = [ 53 17500 10396 80 443 ];
+      allowedUDPPorts = [ 53 17500 10396 ];
     };
   };
   services.openssh = {
@@ -49,7 +50,7 @@
       PasswordAuthentication = false;
       KbdInteractiveAuthentication = false;
     };
-  }
+  };
   programs.gnupg.agent = {
     enable = true;
     enableSSHSupport = true;

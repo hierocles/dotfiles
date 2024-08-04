@@ -21,6 +21,9 @@
     ];
   };
 
+  xdg.configFile."kitty/gruvbox_dark_hard.conf".source = ../../programs/kitty/gruvbox_dark_hard.conf;
+  xdg.configFile."kitty/kitty.conf".source = ../../programs/kitty/kitty.conf;
+
   dconf = {
     enable = true;
     settings."org/gnome/shell" = {
