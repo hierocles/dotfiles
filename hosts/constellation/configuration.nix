@@ -44,6 +44,10 @@
       allowedUDPPorts = [ 10396 ];
     };
   };
+  security.acme = {
+    acceptTerms = true;
+    defaults.email = "4733259+hierocles@users.noreply.github.com";
+  };
   services.openssh = {
     enable = true;
     settings = {
@@ -55,6 +59,8 @@
     enable = true;
     enableSSHSupport = true;
   };
+
+
   programs.fish.enable = true;
 
   i18n.defaultLocale = "en_US.UTF-8";
