@@ -24,7 +24,6 @@
       unzip
       neovim
       fzf
-      alacritty
       binutils
       wget
       intel-gpu-tools
@@ -41,6 +40,7 @@
       gtk-engine-murrine
       sassc
       gnome-themes-extra
+      kitty
       (pkgs.nerdfonts.override { fonts = [ "CascadiaCode" ]; })
     ];
   };

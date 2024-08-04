@@ -20,7 +20,6 @@
       capitaine-cursors-themed
     ];
   };
-  xdg.configFile."alacritty/alacritty.toml".source = ../../programs/alacritty/alacritty.toml;
 
   dconf = {
     enable = true;
@@ -38,7 +37,7 @@
       favorite-apps = [
         "firefox.desktop"
         "code.desktop"
-        "Alacritty.desktop"
+        "kitty.desktop"
       ];
     };
     settings = {
