@@ -40,8 +40,8 @@
     firewall = {
       enable = true;
       trustedInterfaces = [ "docker0" ];
-      allowedTCPPorts = [ 53 17500 10396 80 443 ];
-      allowedUDPPorts = [ 53 17500 10396 ];
+      allowedTCPPorts = [ 80 443 10396 ];
+      allowedUDPPorts = [ 10396 ];
     };
   };
   services.openssh = {

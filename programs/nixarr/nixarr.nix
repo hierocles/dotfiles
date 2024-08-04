@@ -17,14 +17,14 @@
     };
 
     ddns.njalla = {
-      enable = false;
+      enable = true;
       keysFile = config.age.secrets.njalla.path;
     };
 
     plex = {
       enable = true;
       expose.https = {
-        enable = false;
+        enable = true;
         domainName = "plex.hierocles.win";
         acmeMail = "4733259+hierocles@users.noreply.github.com";
       };
