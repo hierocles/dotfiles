@@ -64,7 +64,7 @@
       proxy_buffering off;
     '';
     locations."/" = {
-      proxyPass = "http://192.168.0.71:32400/";
+      proxyPass = "http://localhost:32400/";
     };
   };
 }

@@ -6,9 +6,15 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nixarr.url = "github:hierocles/nixarr/add-plex-support";
+    agenix = {
+      url = "github:ryantm/agenix";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.darwin.follows = "";
+    };
   };
 
-  outputs = { self, home-manager, nixpkgs, ... }:
+  outputs = { self, home-manager, nixpkgs, nixarr, agenix, ... }:
   let
       overlays = [ ];
       homeManagerConfFor = config:
@@ -21,6 +27,8 @@
         system = "x86_64-linux";
         modules = [
           ./hosts/constellation/configuration.nix
+          nixarr.nixosModules.default
+          agenix.nixosModules.default
           home-manager.nixosModules.home-manager
           {
             home-manager.useUserPackages = true;

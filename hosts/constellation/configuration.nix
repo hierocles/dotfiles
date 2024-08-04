@@ -2,7 +2,6 @@
   imports = [ 
     ./hardware-configuration.nix
     ../../programs/non-free.nix
-    ../../programs/nginx/nginx.nix
     ../../programs/plex/plex.nix
     ];
 
@@ -44,6 +43,13 @@
       allowedUDPPorts = [ 17500 ];
     };
   };
+  services.openssh = {
+    enable = true;
+    settings = {
+      PasswordAuthentication = false;
+      KbdInteractiveAuthentication = false;
+    };
+  }
   programs.gnupg.agent = {
     enable = true;
     enableSSHSupport = true;
@@ -96,6 +102,11 @@
     home = "/home/dylan";
     uid = 1000;
     shell = pkgs.fish;
+    openssh.authorizedKeys.keys = [
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEWcrem5HETpI7+g+oSKLKkQzKkoA6Rgbcd9bFIlNdAv"
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIN0GBuGcyaeLluRP0S+hzVaImcK8ZdhHAPK8kYnY+5ff"
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKB466E68pNKhuPLCW+KXJzKUzi7N1qHjS+1kZIlIa9b"
+    ];
   };
 
   nix = {
