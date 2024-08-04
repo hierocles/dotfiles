@@ -40,7 +40,7 @@
     firewall = {
       enable = true;
       trustedInterfaces = [ "docker0" ];
-      allowedTCPPorts = [ 80 443 10396 ];
+      allowedTCPPorts = [ 80 443 10396 8191 ];
       allowedUDPPorts = [ 10396 ];
     };
   };

@@ -1,5 +1,10 @@
 { config, lib, pkgs, ... }: {
   
+  environment.systemPackages = with pkgs; [
+    flaresolverr
+    recyclarr
+  ];
+
   environment.etc."wg.conf".source = config.age.secrets.wg.path;
 
   nixarr = {
@@ -46,5 +51,11 @@
     prowlarr.enable = true; #9696
     radarr.enable = true; #7878
     sonarr.enable = true; #8989
+  };
+
+  services.flaresolverr = {
+    enable = true;
+    port = 8191;
+    openFirewall = true;
   };
 }
