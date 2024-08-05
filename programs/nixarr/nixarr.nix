@@ -1,7 +1,6 @@
 { config, lib, pkgs, ... }: {
   
   environment.systemPackages = with pkgs; [
-    flaresolverr
     recyclarr
   ];
 
@@ -44,6 +43,7 @@
       enable = true; #9091
       vpn.enable = true;
       peerPort = 10396;
+      flood.enable = true;
       credentialsFile = config.age.secrets.transmission.path;
     };
 
@@ -53,9 +53,14 @@
     sonarr.enable = true; #8989
   };
 
-  services.flaresolverr = {
-    enable = true;
-    port = 8191;
+  #services.flaresolverr = {
+  #  enable = true;
+  #  port = 8191;
+  #  openFirewall = true;
+  #};
+
+  services.jellyseerr = {
+    enable = true; #5055
     openFirewall = true;
   };
 }
