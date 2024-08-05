@@ -44,6 +44,11 @@
       allowedUDPPorts = [ 10396 ];
     };
   };
+  services.adguardhome = {
+    enable = true;
+    openFirewall = true;
+    port = 3000;
+  };
   security.acme = {
     acceptTerms = true;
     defaults.email = "4733259+hierocles@users.noreply.github.com";
