@@ -20,10 +20,10 @@
       vpnTestService.port = 10396;
     };
 
-    #ddns.njalla.vpn = {
-    #  enable = true;
-    #  keysFile = config.age.secrets.njalla.path;
-    #};
+    ddns.njalla = {
+      enable = true;
+      keysFile = config.age.secrets.njalla.path;
+    };
 
     plex = {
       enable = true; #34200
@@ -32,11 +32,11 @@
       #  accessibleFrom = "plex.hierocles.win";
       #  port = 10396;
       #};
-      #expose.https = {
-      #  enable = true;
-      #  domainName = "plex.hierocles.win";
-      #  acmeMail = "4733259+hierocles@users.noreply.github.com";
-      #};
+      expose.https = {
+        enable = true;
+        domainName = "plex.hierocles.win";
+        acmeMail = "4733259+hierocles@users.noreply.github.com";
+      };
     };
 
     transmission = {
