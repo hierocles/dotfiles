@@ -20,12 +20,4 @@
     acceptTerms = true;
     defaults.email = "4733259+hierocles@users.noreply.github.com";
   };
-  #services.caddy = {
-  #  enable = true;
-  #  virtualHosts = {
-  #    "hierocles.win".extraConfig = ''
-  #      respond "Hello, world!"
-  #    '';
-  #  };
-  #};
 }

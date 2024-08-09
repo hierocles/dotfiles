@@ -14,8 +14,8 @@
     vpn = {
       enable = true;
       wgConf = "/etc/wg.conf";
-      openTcpPorts = [ 10396 ];
-      openUdpPorts = [ 10396 ];
+      openTcpPorts = [ 10396 6360 ];
+      openUdpPorts = [ 10396 6360 ];
       vpnTestService.enable = true;
       vpnTestService.port = 10396;
     };
@@ -27,15 +27,12 @@
 
     plex = {
       enable = true; #34200
-      #vpn.enable = true;
-      #expose.vpn = {
-      #  accessibleFrom = "plex.hierocles.win";
-      #  port = 10396;
-      #};
-      expose.https = {
+      #openFirewall = true;
+      vpn.enable = true;
+      expose.vpn = {
         enable = true;
-        domainName = "plex.hierocles.win";
-        acmeMail = "4733259+hierocles@users.noreply.github.com";
+        accessibleFrom = "plex.hierocles.win";
+        port = 6360;
       };
     };
 
