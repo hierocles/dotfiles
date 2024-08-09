@@ -20,7 +20,7 @@
       vpnTestService.port = 10396;
     };
 
-    ddns.njalla = {
+    ddns.njalla.vpn = {
       enable = true;
       keysFile = config.age.secrets.njalla.path;
     };
