@@ -43,7 +43,6 @@
       gnome-themes-extra
       kitty
       (pkgs.nerdfonts.override { fonts = [ "CascadiaCode" ]; })
-      haskellPackages.nixpkgs-update
     ];
   };
   programs.fzf.enable = true;

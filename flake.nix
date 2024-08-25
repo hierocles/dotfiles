@@ -12,9 +12,13 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.darwin.follows = "";
     };
+    nixpkgs-update = {
+      url = "github:nix-community/nixpkgs-update";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, home-manager, nixpkgs, agenix, nixarr, ... }:
+  outputs = { self, home-manager, nixpkgs, agenix, nixarr, nixpkgs-update, ... }:
   let
       overlays = [ ];
       homeManagerConfFor = config:
@@ -37,7 +41,10 @@
               homeManagerConfFor ./hosts/constellation/home.nix;
           }
           {
-            environment.systemPackages = [ agenix.packages.x86_64-linux.default ];
+            environment.systemPackages = [ 
+              agenix.packages.x86_64-linux.default
+              nixpkgs-update
+            ];
           }
         ];
         specialArgs = { inherit nixpkgs; };
