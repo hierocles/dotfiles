@@ -14,26 +14,26 @@
     vpn = {
       enable = true;
       wgConf = "/etc/wg.conf";
-      openTcpPorts = [ 10396 6360 ];
-      openUdpPorts = [ 10396 6360 ];
+      openTcpPorts = [ 10396 ];
+      openUdpPorts = [ 10396 ];
       vpnTestService.enable = true;
       vpnTestService.port = 10396;
     };
 
-    ddns.njalla.vpn = {
-      enable = true;
-      keysFile = config.age.secrets.njalla.path;
-    };
+    #ddns.njalla.vpn = {
+    #  enable = true;
+    #  keysFile = config.age.secrets.njalla.path;
+    #};
 
     plex = {
       enable = true; #34200
-      #openFirewall = true;
-      vpn.enable = true;
-      expose.vpn = {
-        enable = true;
-        accessibleFrom = "plex.hierocles.win";
-        port = 6360;
-      };
+      openFirewall = true;
+      #vpn.enable = true;
+      #expose.vpn = {
+      #  enable = true;
+      #  accessibleFrom = "plex.hierocles.win";
+      #  port = 6360;
+      #};
     };
 
     transmission = {
@@ -42,6 +42,7 @@
       peerPort = 10396;
       flood.enable = true;
       credentialsFile = config.age.secrets.transmission.path;
+      extraAllowedIps = [ "192.168.*.*" ];
     };
 
     bazarr.enable = true; #6767

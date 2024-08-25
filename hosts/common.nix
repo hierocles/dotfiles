@@ -3,6 +3,7 @@
     ../programs/fish/fish.nix
     ../programs/git.nix
     ../programs/vscode.nix
+    ../programs/non-free.nix
   ];
 
   home = {
