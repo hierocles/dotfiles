@@ -8,7 +8,7 @@
 
   nixarr = {
     enable = true;
-    mediaDir = "/datapool/subvol-100-disk-2";
+    mediaDir = "/datapool";
     stateDir = "/data/.state/nixarr";
 
     vpn = {
