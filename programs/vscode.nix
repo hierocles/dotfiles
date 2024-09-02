@@ -13,7 +13,7 @@
       wix.vscode-import-cost
       gruntfuggly.todo-tree
       jnoortheen.nix-ide
-      jetpack-io.devbox
+      jetify.devbox
       arrterian.nix-env-selector
       jdinhlife.gruvbox
       redhat.yaml
