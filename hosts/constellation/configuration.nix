@@ -134,7 +134,7 @@
     polkitPolicyOwners = [ "dylan" ];
   };
   
-  environment.gnome.excludePackages = (with pkgs; [
+  environment.gnome.excludePackages = with pkgs; [
     gnome-photos
     gnome-tour
     epiphany
@@ -145,7 +145,6 @@
     yelp
     gnome-calendar
     simple-scan
-  ]) ++ (with pkgs.gnome; [
     gnome-music
     tali
     iagno
@@ -155,7 +154,7 @@
     gnome-contacts
     gnome-initial-setup
     gnome-maps
-  ]);
+  ];
 
   services.udev.packages = with pkgs; [
     gnome.gnome-settings-daemon
