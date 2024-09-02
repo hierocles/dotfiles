@@ -1,4 +1,4 @@
-{ config, lib, nixpkgs, pkgs, services, ... }: {
+{ ... }: {
   networking = {
     hostName = "constellation";
     hostId = "e1a8512a";

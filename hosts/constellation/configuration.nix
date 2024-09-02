@@ -1,4 +1,4 @@
-{ config, lib, nixpkgs, pkgs, services, ... }: {
+{ config, nixpkgs, pkgs, ... }: {
   imports = [ 
     ./hardware-configuration.nix
     ./networking.nix

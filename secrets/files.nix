@@ -1,4 +1,4 @@
-{ config, ... }: {
+{ ... }: {
   age = {
     secrets = {
       njalla.file = ./njalla.age;
