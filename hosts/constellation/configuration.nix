@@ -46,8 +46,6 @@
   };
 
 
-  programs.fish.enable = true;
-
   i18n.defaultLocale = "en_US.UTF-8";
   services.xserver = {
     enable = true;
@@ -56,6 +54,7 @@
     desktopManager.gnome.enable = true;
   };
 
+  hardware.enableRedistributableFirmware = true;
   hardware.graphics = {
     enable = true;
     extraPackages = with pkgs; [ intel-media-driver vaapiVdpau libvdpau-va-gl ];

@@ -16,9 +16,14 @@
       url = "github:nix-community/nixpkgs-update";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nur.url = "github:nix-community/nur";
+    nix-vscode-extensions = {
+      url = "github:nix-community/nix-vscode-extensions";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, home-manager, nixpkgs, agenix, nixarr, nixpkgs-update, ... }:
+  outputs = { self, home-manager, nixpkgs, ... }@inputs:
   let
       overlays = [ ];
       homeManagerConfFor = config:
