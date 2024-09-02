@@ -34,7 +34,10 @@
     nix-vscode-extensions,
     ... }:
   let
-      overlays = [ ];
+      overlays = [ 
+        inputs.nix-vscode-extensions.overlays.default
+        inputs.nur.overlay
+      ];
       homeManagerConfFor = config:
         { ... }: {
           nixpkgs.overlays = overlays;
