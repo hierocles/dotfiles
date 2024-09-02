@@ -16,7 +16,7 @@
       jetify.devbox
       arrterian.nix-env-selector
       jdinhlife.gruvbox
-      redhat.yaml
+      redhat.vscode-yaml
       mads-hartmann.bash-ide-vscode
       mkhl.shfmt
     ];
@@ -65,6 +65,7 @@
       "todo-tree.highlights.customHighlight.BUG.iconColour" = "orange";
       "todo-tree.highlights.customHighlight.BUG.icon" = "bug";
       "todo-tree.highlights.customHighlight.BUG.gutterIcon" = true;
+      "redhat.telemetry.enabled" = false;
     };
   };
  }
