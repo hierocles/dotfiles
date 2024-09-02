@@ -14,8 +14,6 @@
     vpn = {
       enable = true;
       wgConf = "/etc/wg.conf";
-      openTcpPorts = [ 10396 ];
-      openUdpPorts = [ 10396 ];
       vpnTestService.enable = true;
       vpnTestService.port = 10396;
     };
