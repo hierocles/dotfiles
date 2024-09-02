@@ -84,6 +84,7 @@
   users.groups = {
     media = { };
   };
+  programs.fish.enable = true;
   users.users.dylan = {
     isNormalUser = true;
     createHome = true;
