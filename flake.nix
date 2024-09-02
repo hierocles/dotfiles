@@ -32,7 +32,7 @@
     nixpkgs-update,
     nur,
     nix-vscode-extensions,
-    ... }:
+    ... }@inputs:
   let
       overlays = [ 
         inputs.nix-vscode-extensions.overlays.default
