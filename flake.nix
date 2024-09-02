@@ -23,7 +23,16 @@
     };
   };
 
-  outputs = { self, home-manager, nixpkgs, ... }@inputs:
+  outputs = { 
+    self, 
+    home-manager, 
+    nixpkgs, 
+    nixarr,
+    agenix,
+    nixpkgs-update,
+    nur,
+    nix-vscode-extensions,
+    ... }:
   let
       overlays = [ ];
       homeManagerConfFor = config:
