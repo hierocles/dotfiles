@@ -250,11 +250,11 @@
         "vpnconfinement": "vpnconfinement"
       },
       "locked": {
-        "lastModified": 1723166400,
-        "narHash": "sha256-wp4V3g54Y95SYU8+Bvtlb/Gg1Ul64yF2ntRgVJHbaXo=",
+        "lastModified": 1725307928,
+        "narHash": "sha256-JnvoRtkUX9ysoAkhnl1PTSA4kksWJKMcoKnLhqCezw4=",
         "owner": "hierocles",
         "repo": "nixarr",
-        "rev": "99550ea408c636d5a38e092b406c1c1e4cf4b002",
+        "rev": "17db81ba29cf642b6da3bea29e781460118e3450",
         "type": "github"
       },
       "original": {
