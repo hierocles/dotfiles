@@ -14,24 +14,11 @@
     vpn = {
       enable = true;
       wgConf = "/etc/wg.conf";
-      vpnTestService.enable = true;
-      vpnTestService.port = 10396;
     };
-
-    #ddns.njalla.vpn = {
-    #  enable = true;
-    #  keysFile = config.age.secrets.njalla.path;
-    #};
 
     plex = {
       enable = true; #34200
       openFirewall = true;
-      #vpn.enable = true;
-      #expose.vpn = {
-      #  enable = true;
-      #  accessibleFrom = "plex.hierocles.win";
-      #  port = 6360;
-      #};
     };
 
     transmission = {
@@ -48,12 +35,6 @@
     radarr.enable = true; #7878
     sonarr.enable = true; #8989
   };
-
-  #services.flaresolverr = {
-  #  enable = true;
-  #  port = 8191;
-  #  openFirewall = true;
-  #};
 
   services.jellyseerr = {
     enable = true; #5055
