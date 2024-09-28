@@ -1,4 +1,4 @@
-{ config, nixpkgs, pkgs, ... }: {
+{ nixpkgs, pkgs, ... }: {
   imports = [ 
     ./hardware-configuration.nix
     ./networking.nix
@@ -22,7 +22,7 @@
       "zfs"
       "i915"
     ];
-    kernelPackages = config.boot.zfs.package.latestCompatibleLinuxPackages;
+    kernelPackages = pkgs.linuxPackages_6_10;
     supportedFilesystems = [ "zfs" ];
     zfs.extraPools = [ "datapool" ];
   };
