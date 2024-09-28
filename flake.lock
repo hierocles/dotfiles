@@ -232,11 +232,11 @@
         "vpnconfinement": "vpnconfinement"
       },
       "locked": {
-        "lastModified": 1727558715,
-        "narHash": "sha256-KH7xEMdPcwe0B7+sUKezEKHT+k8MxHGmlihDQcWPx/Y=",
+        "lastModified": 1727560141,
+        "narHash": "sha256-QWSPU4Is4oyC00rAW8Xu8tiHvPqh33gc439tJVGLYPY=",
         "owner": "hierocles",
         "repo": "nixarr",
-        "rev": "c593b3ca2474174ec0a6b8938a1ea7eebbfc0c29",
+        "rev": "f2dba5a1e05731f1f04d8833fcc01528ace0d720",
         "type": "github"
       },
       "original": {
