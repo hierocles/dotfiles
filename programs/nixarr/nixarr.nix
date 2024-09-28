@@ -41,6 +41,7 @@
     ddns.njalla = {
       enable = true;
       keysFile = config.age.secrets.njalla.path;
+      vpn.enable = true;
     };
   };
 
