@@ -2,7 +2,7 @@
   networking = {
     hostName = "constellation";
     hostId = "e1a8512a";
-    enableIPv6 = false;
+    enableIPv6 = true;
     networkmanager.enable = true;
     firewall = {
       enable = true;
