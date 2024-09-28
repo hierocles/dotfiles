@@ -22,6 +22,14 @@
     plex = {
       enable = true; #34200
       openFirewall = true;
+      vpn = {
+        enable = true;
+        expose.vpn = {
+          enable = true;
+          accessibleFrom = "plex.hierocles.win";
+          port = 6360;
+        };
+      };
     };
 
     transmission = {
