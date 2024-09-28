@@ -19,6 +19,7 @@
       redhat.vscode-yaml
       mads-hartmann.bash-ide-vscode
       mkhl.shfmt
+      supermaven.supermaven
     ];
     userSettings = {
       "editor.fontFamily" = "CaskaydiaCove NF";
