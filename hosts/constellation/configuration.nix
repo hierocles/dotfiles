@@ -25,11 +25,19 @@
     kernelPackages = pkgs.linuxPackages_6_10;
     supportedFilesystems = [ "zfs" ];
     zfs.extraPools = [ "datapool" ];
+    kernel.sysctl = {
+      "vm.swappiness" = 180;
+    };
   };
 
 
   services.zfs.autoScrub.enable = true;
 
+  zramSwap = {
+    enable = true;
+    memoryPercent = 50;
+    algorithm = "zstd";
+  };
 
   time.timeZone = "America/New_York";
 
