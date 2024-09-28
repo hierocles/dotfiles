@@ -6,7 +6,7 @@
 
   environment.etc."wg.conf".source = config.age.secrets.wg.path;
   systemd.tmpfiles.rules = [
-    "Z ${config.age.secrets.njalla.path} 0755 root root - -"
+    "Z ${config.age.secrets.njalla.path} 0700 root root - -"
   ];
 
   nixarr = {
