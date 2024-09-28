@@ -157,7 +157,7 @@
   ];
 
   services.udev.packages = with pkgs; [
-    gnome.gnome-settings-daemon
+    gnome-settings-daemon
   ];
 
   virtualisation.docker = {
