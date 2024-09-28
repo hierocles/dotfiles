@@ -5,9 +5,9 @@
   ];
 
   environment.etc."wg.conf".source = config.age.secrets.wg.path;
-  systemd.tmpfiles.rules = [
+  /*systemd.tmpfiles.rules = [
     "Z ${config.age.secrets.njalla.path} 0700 root root - -"
-  ];
+  ];*/
 
   nixarr = {
     enable = true;
@@ -22,14 +22,12 @@
     plex = {
       enable = true; #34200
       openFirewall = true;
-      vpn = {
+      /*vpn.enable = true;
+      expose.vpn = {
         enable = true;
-        expose.vpn = {
-          enable = true;
-          accessibleFrom = "plex.hierocles.win";
-          port = 6360;
-        };
-      };
+        accessibleFrom = "plex.hierocles.win";
+        port = 6360;
+      };*/
     };
 
     transmission = {
@@ -46,14 +44,14 @@
     radarr.enable = true; #7878
     sonarr.enable = true; #8989
 
-    ddns.njalla = {
+    /*ddns.njalla = {
       enable = true;
       keysFile = config.age.secrets.njalla.path;
       vpn = {
         enable = true;
         keysFile = config.age.secrets.njalla.path;
       };
-    };
+    };*/
   };
 
   services.jellyseerr = {
