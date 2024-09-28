@@ -40,8 +40,11 @@
 
     ddns.njalla = {
       enable = true;
-      vpn.enable = true;
-      vpn.keysFile = config.age.secrets.njalla.path;
+      keysFile = config.age.secrets.njalla.path;
+      vpn = {
+        enable = true;
+        keysFile = config.age.secrets.njalla.path;
+      };
     };
   };
 
