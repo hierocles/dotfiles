@@ -5,6 +5,9 @@
   ];
 
   environment.etc."wg.conf".source = config.age.secrets.wg.path;
+  systemd.tmpfiles.rules = [
+    "Z ${config.age.secrets.njalla.path} 0755 root root - -"
+  ];
 
   nixarr = {
     enable = true;
@@ -34,6 +37,11 @@
     prowlarr.enable = true; #9696
     radarr.enable = true; #7878
     sonarr.enable = true; #8989
+
+    ddns.njalla = {
+      enable = true;
+      keysFile = config.age.secrets.njalla.path;
+    };
   };
 
   services.jellyseerr = {
