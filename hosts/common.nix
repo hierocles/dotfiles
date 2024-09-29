@@ -43,6 +43,9 @@
       gnome-themes-extra
       kitty
       (pkgs.nerdfonts.override { fonts = [ "CascadiaCode" ]; })
+      nil
+      shellcheck
+      shfmt
     ];
   };
   programs.fzf.enable = true;

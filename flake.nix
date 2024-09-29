@@ -21,6 +21,8 @@
       url = "github:nix-community/nix-vscode-extensions";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    alejandra.url = "github:kamadorueda/alejandra/3.0.0";
+    alejandra.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = { 
@@ -32,8 +34,10 @@
     nixpkgs-update,
     nur,
     nix-vscode-extensions,
+    alejandra,
     ... }@inputs:
   let
+      system = "x86_64-linux";
       overlays = [ 
         inputs.nix-vscode-extensions.overlays.default
         inputs.nur.overlay
@@ -45,7 +49,7 @@
         };
     in {
       nixosConfigurations.constellation = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
+        inherit system;
         modules = [
           ./hosts/constellation/configuration.nix
           ./secrets/files.nix
@@ -59,8 +63,9 @@
           }
           {
             environment.systemPackages = [ 
-              agenix.packages.x86_64-linux.default
+              agenix.defaultPackage.${system}
               nixpkgs-update
+              alejandra.defaultPackage.${system}
             ];
           }
         ];

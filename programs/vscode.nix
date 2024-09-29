@@ -20,6 +20,7 @@
       mads-hartmann.bash-ide-vscode
       mkhl.shfmt
       supermaven.supermaven
+      tamasfe.even-better-toml
     ];
     userSettings = {
       "editor.fontFamily" = "CaskaydiaCove NF";
