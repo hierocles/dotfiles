@@ -5,4 +5,5 @@ in {
 	"njalla.age".publicKeys = [ key ];
 	"wg.age".publicKeys = [ key ];
 	"transmission.age".publicKeys = [ key ];
+	"qbitrr.age".publicKeys = [ key ];
 }

@@ -4,6 +4,7 @@
     ./networking.nix
     ../../programs/non-free.nix
     ../../programs/nixarr/nixarr.nix
+    ../../programs/qbitrr/qbitrr.nix
     ];
 
   boot = {
